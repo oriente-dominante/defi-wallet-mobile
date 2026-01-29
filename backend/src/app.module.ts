@@ -5,6 +5,9 @@ import { ScheduleModule } from '@nestjs/schedule';
 import configuration from './config/configuration';
 import { HealthModule } from './modules/health/health.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
+import { BlockchainModule } from './modules/blockchain/blockchain.module';
+import { PortfolioModule } from './modules/portfolio/portfolio.module';
+import { SwapModule } from './modules/swap/swap.module';
 
 @Module({
   imports: [
@@ -28,6 +31,9 @@ import { NotificationsModule } from './modules/notifications/notifications.modul
     // Feature modules
     HealthModule,
     NotificationsModule,
+    BlockchainModule,
+    PortfolioModule,
+    SwapModule,
   ],
 })
 export class AppModule {}
