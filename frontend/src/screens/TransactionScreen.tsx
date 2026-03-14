@@ -30,8 +30,8 @@ const TransactionScreen: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    dispatch(fetchTransactions());
-  }, [dispatch]);
+    dispatch(fetchTransactions(filter));
+  }, [dispatch, filter]);
 
   const filteredAndSearchedTransactions = transactions
     .filter(transaction => {
@@ -76,7 +76,7 @@ const TransactionScreen: React.FC = () => {
     });
 
   const onRefresh = () => {
-    dispatch(fetchTransactions());
+    dispatch(fetchTransactions(filter));
   };
 
   const formatHash = (hash: string): string => {

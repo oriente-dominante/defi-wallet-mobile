@@ -52,7 +52,7 @@ export const fetchPortfolio = createAsyncThunk(
 );
 
 const initialState: PortfolioState = {
-  portfolio: null,
+  portfolio: mockPortfolio,
   isLoading: false,
   error: null,
   selectedAddress: null,
