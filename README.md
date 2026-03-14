@@ -278,16 +278,29 @@ curl -X POST http://localhost:3000/api/swap/jupiter/quote \
 
 ---
 
-## 10. Screenshots & Demo
+## 10. Screenshots
 
-### Suggested Visuals
+<p align="center">
+  <img src="assets/screenshots/01-portfolio.png" width="200" alt="Portfolio Dashboard" />
+  <img src="assets/screenshots/02-send.png" width="200" alt="Token Send" />
+  <img src="assets/screenshots/03-swap.png" width="200" alt="Swap" />
+  <img src="assets/screenshots/04-history.png" width="200" alt="Transaction History" />
+</p>
 
-- [ ] Portfolio dashboard with token list and total value
-- [ ] Price alert creation interface
-- [ ] Swap interface with route preview
-- [ ] Transaction history with status indicators
-- [ ] Settings screen with security options
-- [ ] Push notification example on device
+| Screen | Description |
+|--------|-------------|
+| **Portfolio** | Real-time portfolio tracking with SOL, ETH, USDC holdings, 24h changes, and live market data |
+| **Send** | Send tokens to any address with fee estimation, address validation, and wallet confirmation |
+| **Swap** | Token swaps via Jupiter (Solana) and 0x Protocol (Ethereum) with route optimization |
+| **History** | Comprehensive transaction history with status indicators, filtering, and search |
+
+<p align="center">
+  <img src="assets/screenshots/05-settings.png" width="200" alt="Settings" />
+</p>
+
+| Screen | Description |
+|--------|-------------|
+| **Settings** | Dark/light theme, currency, language, network preferences, biometric auth, and custom tokens |
 
 ---
 

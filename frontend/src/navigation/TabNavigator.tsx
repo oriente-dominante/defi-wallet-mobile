@@ -2,9 +2,9 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text, View, StyleSheet } from 'react-native';
 import EnhancedPortfolioScreen from '../screens/EnhancedPortfolioScreen';
+import SendScreen from '../screens/SendScreen';
 import SwapScreen from '../screens/SwapScreen';
 import TransactionScreen from '../screens/TransactionScreen';
-import PriceAlertsScreen from '../screens/PriceAlertsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import { useTheme } from '../hooks/useTheme';
 
@@ -68,8 +68,22 @@ const TabNavigator: React.FC = () => {
           tabBarIcon: ({ focused }) => (
             <TabIcon
               focused={focused}
-              icon="💼"
+              icon={'\uD83D\uDCBC'}
               label="Portfolio"
+              theme={theme}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Send"
+        component={SendScreen}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              focused={focused}
+              icon={'\uD83D\uDCE4'}
+              label="Send"
               theme={theme}
             />
           ),
@@ -80,7 +94,12 @@ const TabNavigator: React.FC = () => {
         component={SwapScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon="��" label="Swap" theme={theme} />
+            <TabIcon
+              focused={focused}
+              icon={'\uD83D\uDD04'}
+              label="Swap"
+              theme={theme}
+            />
           ),
         }}
       />
@@ -91,19 +110,10 @@ const TabNavigator: React.FC = () => {
           tabBarIcon: ({ focused }) => (
             <TabIcon
               focused={focused}
-              icon="📋"
+              icon={'\uD83D\uDCCB'}
               label="History"
               theme={theme}
             />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Alerts"
-        component={PriceAlertsScreen}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon="🔔" label="Alerts" theme={theme} />
           ),
         }}
       />
@@ -114,7 +124,7 @@ const TabNavigator: React.FC = () => {
           tabBarIcon: ({ focused }) => (
             <TabIcon
               focused={focused}
-              icon="⚙️"
+              icon={'\u2699\uFE0F'}
               label="Settings"
               theme={theme}
             />

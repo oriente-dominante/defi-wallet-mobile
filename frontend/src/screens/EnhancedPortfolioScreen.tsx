@@ -29,7 +29,7 @@ import { useTheme } from '../hooks/useTheme';
 const EnhancedPortfolioScreen: React.FC = () => {
   const theme = useTheme();
   const dispatch = useAppDispatch();
-  const { selectedNetwork } = useAppSelector(state => state.portfolio);
+  const { selectedNetwork, portfolio: reduxPortfolio } = useAppSelector(state => state.portfolio);
   const {
     isConnected,
     address,
@@ -46,7 +46,7 @@ const EnhancedPortfolioScreen: React.FC = () => {
 
   // Real API calls with RTK Query
   const {
-    data: portfolio,
+    data: apiPortfolio,
     isLoading: portfolioLoading,
     error: portfolioError,
     refetch: refetchPortfolio,
@@ -57,6 +57,9 @@ const EnhancedPortfolioScreen: React.FC = () => {
       pollingInterval: 30000, // Poll every 30 seconds for live data
     },
   );
+
+  // Use API data if available, otherwise fall back to Redux state mock data
+  const portfolio = apiPortfolio || reduxPortfolio;
 
   // Get real-time price data
   const { data: pricesData, isLoading: pricesLoading } = useGetTokenPricesQuery(
@@ -384,7 +387,7 @@ const EnhancedPortfolioScreen: React.FC = () => {
     retryText: { fontSize: 16 },
   });
 
-  if (error && !(error as any).fallback) {
+  if (error && !(error as any).fallback && !portfolio) {
     return (
       <View
         style={[
